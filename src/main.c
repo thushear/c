@@ -11,10 +11,35 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "calc.h"
+#include "readlines.h"
+#include "qsort.h"
+
+#define MAXLINES 5000
+
 #define  MAXOP 100
 
-int main(void) {
-	int type;
+char *lineptr[MAXLINES];
+
+int main(int argc,char *argv[]) {
+	int nlines;
+	if((nlines=readlines(lineptr,MAXLINES))>=0){
+		qsort1(lineptr,0,nlines-1);
+		writelines(lineptr,nlines);
+		return 0;
+	}else{
+		printf("Error: input too big to sort.\n");
+		return 1;
+	}
+
+
+
+
+     /* int array[100];
+	 int n = strlen("hello world");
+	 int m = strlen(array);
+	 printf( "%d\n",n);
+	 printf( "%d\n",m);*/
+	/*int type;
 	    double op2;
 	    char s[MAXOP];
 
@@ -55,6 +80,14 @@ int main(void) {
 	        break;
 	        }
 	    }
-
+*/
 	    return 0;
 }
+/**/
+int strlen(char *s){
+	int n;
+	for(n=0;*s!='\0';s++)
+		 n++;
+	return n;
+}
+
