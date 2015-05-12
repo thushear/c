@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main(int argc, char *argv[])
+{
+	int i1 = 88888888;// 00000101 01001100 01010110 00111000
+	short *p2 = &i1;
+	printf("%d\n",*p2);
+	p2++;
+    printf("%d\n",*p2);
+
+    char* ch = &i1;
+	printf("%d %d %d %d \n",ch[0],ch[1],ch[2],ch[3]);
+	
+    //对于计算机而言 存储的都是字节 
+	return 0;
+}
