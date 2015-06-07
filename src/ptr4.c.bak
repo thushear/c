@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main(int argc, char *argv[])
+{
+	char c1[] = "Hello world";
+	char c2[20];
+
+    printf("%d , %d \n",sizeof(c1),sizeof(char));
+	strncpy(c2,c1,sizeof(c1)/sizeof(char));
+	printf("%s \n",c2);
+	return 0;
+}

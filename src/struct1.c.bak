@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+struct  _Person
+{
+	 char *name;
+	 int age;
+	 double height;
+};
+
+
+int main(int argc, char *argv[])
+{
+    //结构体初始化
+	struct _Person p = {0};
+	p.age = 20;
+	p.name = "fsasfasef";
+	p.height = 178;
+	printf( " %d , %s \n",p.age,p.name);
+	printf("%d\n",sizeof(p));
+	return 0;
+}

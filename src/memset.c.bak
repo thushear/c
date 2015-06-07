@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(int argc, char *argv[])
+{
+	char ch[20];//只申请内存 不会初始化
+
+    memset(ch,88,sizeof(ch));
+	printf("%s\n",ch);
+	 
+    int i;
+	for(i=0;i<sizeof(ch);i++){
+	   printf("%d|",ch[i]);
+	   //printf("%s|",ch[i]);
+	}
+
+    //==============
+	printf("\n");
+	char ch1[20] = {0};
+	 int j;
+	for(j=0;j<sizeof(ch);j++){
+	   printf("%d|",ch1[j]);
+	   //printf("%s|",ch[i]);
+	}
+	return 0;
+}

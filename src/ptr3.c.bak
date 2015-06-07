@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+
+void printEach2(int *nums, int len){
+  
+   int i;
+	for(i=0;i<len;i++){
+		printf("%d | ",nums[i]);
+	}
+}
+
+/**
+如果在作用域内，变量以数组形式声明，则可以使用sizeof求数组大小：
+
+int num[]={5,89,33,25,99};
+
+int len = sizeof(num)/sizeof(int);
+sizeof是编译器在编译的时候计算的，无法动态计算。因此对于int *或者将数组传递给函数，那么就无法使用sizeof获取大小了。即使函数声明中写着int[]也不行（为了避免误解，不要在参数中声明数组类型）。
+
+因此一般给函数传递数组/字符串的时候都要求额外传递“长度”参数，因为函数内部也不知道“有多长”。memcpy(void * restrict, const void * restrict, size_t)
+*/
+void printEach(int *nums){
+	//sizeof是在编译时
+	int len = sizeof(nums)/sizeof(int);
+	printf("%d , %d , %d \n",len , sizeof(nums), sizeof(int));
+   int i;
+	for(i=0;i<len;i++){
+		printf("%d | ",nums[i]);
+	}
+}
+
+int main(int argc, char *argv[])
+{
+    int nums[] = {11,22,33,44,55,66};
+	int len = sizeof(nums)/sizeof(int);
+	printf("%d , %d , %d \n",len , sizeof(nums), sizeof(int));
+	int i;
+	for(i=0;i<len;i++){
+		printf("%d | ",nums[i]);
+	}
+	printf("\n"); 
+	//printEach
+    printEach(nums);
+    
+	
+	return 0;
+}
+ 

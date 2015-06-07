@@ -1,0 +1,9 @@
+#include <stdio.h>
+
+int main(int argc, char *argv[])
+{
+	int i1 = 88888888;// 00000101 01001100 01010110 00111000
+	short *p2 = &i1;
+	printf("%d\n",*p2);
+	return 0;
+}
